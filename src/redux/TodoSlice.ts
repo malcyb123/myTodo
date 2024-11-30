@@ -1,19 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-  created_at: string;
-  updated_at: string;
-}
+import { Todo } from "../utils/types";
 
 interface TodosState {
   todos: Todo[];
   shouldScrollToTop: boolean; // Flag to control scroll to top
 }
 
+// Initial state of todoSlice
 const initialState: TodosState = {
   todos: [],
   shouldScrollToTop: false, // Initial state is false
@@ -39,7 +32,7 @@ const todosSlice = createSlice({
       if (index !== -1) {
         state.todos[index] = {
           ...action.payload,
-          updated_at: new Date().toISOString(), // Update the updated_at timestamp only
+          updated_at: new Date().toISOString(), // Update the updated_at timestamp and the data
         };
       }
     },
@@ -65,6 +58,6 @@ export const {
   removeTodo,
   updateTodo,
   resetScrollToTop,
-  setShouldScrollToTop
+  setShouldScrollToTop,
 } = todosSlice.actions;
 export default todosSlice.reducer;

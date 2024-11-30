@@ -17,26 +17,29 @@ const TodoList = ({
   setPage,
 }: any) => {
   const dispatch = useDispatch();
+
+  // Selector to check if scroll-to-top action is triggered
   const shouldScrollToTop = useSelector(
     (state: any) => state.todos.shouldScrollToTop
   );
   const flatListRef = useRef<FlatList>(null); // Create a reference to the FlatList
 
-  // Scroll to top when the flag is true
+  // Function to scroll the list to the top when triggered. 
   const scrollToTop = () => {
     if (flatListRef.current) {
       flatListRef.current.scrollToOffset({ animated: true, offset: 0 });
-      dispatch(resetScrollToTop()); // Reset scroll state after triggering
+      dispatch(resetScrollToTop()); //Resets the scroll-to-top state after scrolling.
     }
   };
 
+    // If the scroll flag is set to true, trigger scrollToTop
   useEffect(() => {
-    // If the scroll flag is set, trigger scrollToTop
     if (shouldScrollToTop) {
       scrollToTop();
     }
   }, [shouldScrollToTop]);
 
+  //Function to render each todo item in the list. Pass props to the TodoItem component.
   const renderItem = useCallback(
     ({ item }: { item: Todo }) => {
       return (
@@ -54,10 +57,11 @@ const TodoList = ({
 
   return (
     <FlatList
-      ref={flatListRef} // Attach ref
+      ref={flatListRef} // Attach ref for scrolling
       data={todos}
-      keyExtractor={(item) => item.id.toString()}
+      keyExtractor={(item) => item.id.toString()} //Unique key for each item based on its ID.
       renderItem={renderItem}
+      // Loading the next page when scrolled to the button. (hasMore) stops when all data is loaded. (!isLoading) ensures no duplicate fetched.
       onEndReached={() => {
         if (hasMore && !isLoading) {
           setPage((prevPage: number) => prevPage + 1);
@@ -75,7 +79,7 @@ const TodoList = ({
       initialNumToRender={10}
       maxToRenderPerBatch={10}
       windowSize={5}
-      // Pass scrollToTop to the AddTodos screen via navigation
+      // Pass scrollToTop function as extra data to ensure FlatList re-renders when it changes.
       extraData={scrollToTop}
     />
   );

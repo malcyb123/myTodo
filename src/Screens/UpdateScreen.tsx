@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { View, TextInput, StyleSheet, Switch, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { updateTodo } from "../redux/TodoSlice";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../utils/types";
 
-type RootStackParamList = {
-    DisplayTodos: undefined;
-    UpdateTodo: { todoId: number }; 
-};
-
+// Type for navigation props, receiving a todoID parameter from the previous screen.
 type UpdateTodoProps = NativeStackScreenProps<RootStackParamList, "UpdateTodo">;
 
 const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
   const { todoId } = route.params;
   const dispatch = useDispatch();
 
+  //Retrieve specific todo item from Redux store using todoID
   const todo = useSelector((state: RootState) =>
     state.todos.todos.find((item) => item.id === todoId)
   );
@@ -23,10 +28,11 @@ const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
   const [title, setTitle] = useState(todo?.title || "");
   const [completed, setCompleted] = useState(todo?.completed || false);
 
+  // To save updated todo details in the Redux store
   const handleSave = () => {
     if (todo) {
       const updatedTodo = {
-        ...todo,  // added new fields for created and updated in interface Todo. It was giving error hence added the spread
+        ...todo, // added new fields for created and updated in interface Todo. It was giving error hence added the spread
         id: todo.id,
         userId: todo.userId,
         title,
@@ -34,10 +40,11 @@ const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
         updated_at: new Date().toISOString(),
       };
       dispatch(updateTodo(updatedTodo));
-      navigation.goBack(); 
+      navigation.goBack();
     }
   };
 
+  //Check if todo exisits, if not, go back to the previous screen.
   useEffect(() => {
     if (!todo) {
       navigation.goBack();
@@ -46,8 +53,8 @@ const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-       <View style={styles.card}>
-       <TextInput
+      <View style={styles.card}>
+        <TextInput
           style={styles.input}
           placeholder="Enter todo title"
           value={title}
@@ -55,8 +62,8 @@ const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
           multiline={true}
           numberOfLines={4}
         />
-      <View style={styles.switchContainer}>
-      <Switch
+        <View style={styles.switchContainer}>
+          <Switch
             value={completed}
             onValueChange={setCompleted}
             thumbColor={completed ? "#fff" : "#333"}
@@ -64,9 +71,9 @@ const UpdateTodo: React.FC<UpdateTodoProps> = ({ route, navigation }) => {
             style={styles.switch}
           />
           <Text>{completed ? "Completed" : "Not Completed"}</Text>
+        </View>
       </View>
-      </View>
-    
+
       <TouchableOpacity
         style={styles.addButton}
         onPress={handleSave}

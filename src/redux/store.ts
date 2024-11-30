@@ -1,6 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import todosReducer from './TodoSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import todosReducer from "./TodoSlice";
 
+// Configure the Redux store with the todosReducer to manage the todos state
+// Exports types for RootState and AppDispatch for type safety in Redux actions and state
 export const store = configureStore({
   reducer: {
     todos: todosReducer,

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Switch } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
+// Used React.memo to optimize performance by preventing unnecessary re-renders
 const TodoItem = React.memo(
   ({ item, navigation, toggleCompletion, handleDelete, styles }: any) => {
     return (

@@ -4,6 +4,8 @@ import { TabView } from "react-native-tab-view";
 import styles from "../../Screens/MainScreen";
 import { TabsProps } from "../../utils/types";
 
+//Render a tab view with dynamic tab titles and their counts. 
+//TabView component to manage tab navigation and displays the count of todos for each tab. 
 const Tabs: React.FC<TabsProps> = ({
   index,
   setIndex,

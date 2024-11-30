@@ -11,11 +11,7 @@ import {
 import { useDispatch } from "react-redux";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { addTodo, setShouldScrollToTop } from "../redux/TodoSlice";
-
-type RootStackParamList = {
-  DisplayTodos: undefined;
-  AddTodos: undefined;
-};
+import { RootStackParamList } from "../utils/types";
 
 type AddTodosProps = NativeStackScreenProps<RootStackParamList, "AddTodos">;
 
