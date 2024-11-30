@@ -66,6 +66,6 @@ This is a simple React Native TODO list app that allows users to manage their ta
     /types.ts
 
 ### Demo:
-[TODO List App Demo Video]
+[TODO List App Video]
 
 https://github.com/user-attachments/assets/caf8fe82-7662-401b-bcd9-d812bb719cde
