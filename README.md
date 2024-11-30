@@ -71,6 +71,11 @@ This is a simple React Native TODO list app that allows users to manage their ta
 https://expo.dev/accounts/mosaddeka/projects/myTodo/builds/ec645255-294c-4955-b6d8-9ab14d53a9f7
 
 ### Demo:
-[TODO List App Video]
+[TODO List App Video and ScreenShots]
 
 https://github.com/user-attachments/assets/caf8fe82-7662-401b-bcd9-d812bb719cde
+
+![TodoApp1](https://github.com/user-attachments/assets/7ffd90cc-f612-44ba-a475-2e25d1955965)
+![TodoApp3](https://github.com/user-attachments/assets/e6c5aae2-15ee-4f2a-95bd-6ccf6774f675)
+![TodoApp2](https://github.com/user-attachments/assets/04694ee1-6ee8-4d48-8e59-168aa0cb2f58)
+
