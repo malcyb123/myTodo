@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+### TODO LIST APP
+This is a simple React Native TODO list app that allows users to manage their tasks efficiently. It features task creation, completion, deletion, and filtering by state of the item, along with sorting by ID and pagination (infinite scroll). I built it using TypeScript, Redux, and React Navigation, the app fetches data from the JSONPlaceholder API and provides a smooth user experience with modern UI design.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### Technologies Used:
+- React Native
+- Redux
+- TypeScript
+- React Navigation
 
-## Get started
+### How to Use:
+1. **Add a new TODO**: Press the + icon on the main screen. Go to the "Add Todo" screen, type in a task, and press "Add Todo".
+2. **Mark as completed**: Toggle the switch in the task item to mark it as completed.
+3. **Update a TODO**: Press the pencil icon next to the task, go to the "Update Todo" screen, modify the task details, update the task state, and press "Update Todo".
+4. **Delete a TODO**: Press the trash icon to remove a task from the list.
+5. **Sort TODOs**: Choose the sorting option between "Most Recent" and "By ID".
+6. **Filter TODOs**: Filter by All, Active, or Done.
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+### Features:
+- [✅] Fetch a list of TODO items from JSONPlaceholder API on app load.
+- [✅] Display a list of TODO items.
+- [✅] Allow users to add new TODO items.
+- [✅] Allow users to mark TODO items as completed.
+- [✅] Allow users to delete TODO items.
+- [✅] Provide a count of total TODO items and completed TODO items.
+- [✅] Maintain `created_at` and `updated_at` timestamps for all TODO items.
+- [✅] Allow users to sort the TODO list by Most Recent or by ID.
+- [✅] Allow users to filter the TODO list by All, Active, or Done.
 
-2. Start the app
+### Bonus (Optional):
+- [✅] Refactor your project to use TypeScript for enhanced type safety, better code readability, and improved development experience.
+- [✅] Implement pagination or infinite scrolling for better performance.
 
-   ```bash
-    npx expo start
-   ```
+### Installation Steps:
 
-In the output, you'll find options to open the app in a
+1. **Clone the repository**:
+```git clone <repository-url>```
+2. **Navigate to the project directory**:
+```cd <project-directory>```
+3. **Install dependencies**:
+```npm install```
+4. **Start the app**:
+```npx expo start```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Folder Structure:
+/app
+  /index.tsx
+/src
+  /components
+    /UIComponents
+      /Tabs.tsx
+      /TodoList.tsx
+      /TodoListCard.tsx
+  /redux
+      /store.ts
+      /TodoSlice.ts
+  /screens
+    /Styles
+      /MainScreen.ts
+    /MainScreenTodo.tsx
+    /AddScreenTodo.tsx
+    /UpdateScreen.tsx
+  /utils
+    /deleteUtils.ts
+    /todoUtils.ts
+    /types.ts
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Demo:
+[TODO List App Video]
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+https://github.com/user-attachments/assets/caf8fe82-7662-401b-bcd9-d812bb719cde
