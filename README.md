@@ -65,6 +65,10 @@ This is a simple React Native TODO list app that allows users to manage their ta
     /todoUtils.ts
     /types.ts
 
+### APK FILE:
+(Click on the link below to install the app on Android device)
+https://expo.dev/accounts/mosaddeka/projects/myTodo/builds/ec645255-294c-4955-b6d8-9ab14d53a9f7
+
 ### Demo:
 [TODO List App Video]
 
