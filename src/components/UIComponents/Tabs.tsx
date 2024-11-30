@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Dimensions } from "react-native";
 import { TabView } from "react-native-tab-view";
-import styles from "../../Screens/MainScreen";
+import styles from "../../Screens/styles/MainScreen";
 import { TabsProps } from "../../utils/types";
 
 //Render a tab view with dynamic tab titles and their counts. 

@@ -7,7 +7,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { addTodo, removeTodo, toggleTodoCompletion } from "../redux/TodoSlice";
 import { confirmDelete } from "../utils/deleteUtils";
 import { countTodos, filterAndSortTodos } from "../utils/todoUtils";
-import styles from "./MainScreen";
+import styles from "./styles/MainScreen";
 
 import axios from "axios";
 import TodoList from "../components/UIComponents/TodoList";
