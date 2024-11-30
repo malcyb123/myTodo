@@ -1,17 +1,20 @@
+### TODO LIST APP
+This is a simple React Native TODO list app that allows users to manage their tasks efficiently. It features task creation, completion, deletion, and filtering by state of the item, along with sorting by ID and pagination (infinite scroll). I built it using TypeScript, Redux, and React Navigation, the app fetches data from the JSONPlaceholder API and provides a smooth user experience with modern UI design.
 
-## Get started
+### Technologies Used:
+- React Native
+- Redux
+- TypeScript
+- React Navigation
 
-1. Install dependencies
+### How to Use:
+1. **Add a new TODO**: Press the + icon on the main screen. Go to the "Add Todo" screen, type in a task, and press "Add Todo".
+2. **Mark as completed**: Toggle the switch in the task item to mark it as completed.
+3. **Update a TODO**: Press the pencil icon next to the task, go to the "Update Todo" screen, modify the task details, update the task state, and press "Update Todo".
+4. **Delete a TODO**: Press the trash icon to remove a task from the list.
+5. **Sort TODOs**: Choose the sorting option between "Most Recent" and "By ID".
+6. **Filter TODOs**: Filter by All, Active, or Done.
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
 
 ### Features:
 - [✅] Fetch a list of TODO items from JSONPlaceholder API on app load.
@@ -28,5 +31,40 @@
 - [✅] Refactor your project to use TypeScript for enhanced type safety, better code readability, and improved development experience.
 - [✅] Implement pagination or infinite scrolling for better performance.
 
+### Installation Steps:
 
+1. **Clone the repository**:
+```git clone <repository-url>```
+2. **Navigate to the project directory**:
+```cd <project-directory>```
+3. **Install dependencies**:
+```npm install```
+4. **Start the app**:
+```npx expo start```
+
+### Folder Structure:
+/app
+  /index.tsx
+/src
+  /components
+    /UIComponents
+      /Tabs.tsx
+      /TodoList.tsx
+      /TodoListCard.tsx
+  /redux
+      /store.ts
+      /TodoSlice.ts
+  /screens
+    /Styles
+      /MainScreen.ts
+    /MainScreenTodo.tsx
+    /AddScreenTodo.tsx
+    /UpdateScreen.tsx
+  /utils
+    /deleteUtils.ts
+    /todoUtils.ts
+    /types.ts
+
+### Demo:
+[TODO List App Demo Video]
 https://github.com/user-attachments/assets/caf8fe82-7662-401b-bcd9-d812bb719cde
