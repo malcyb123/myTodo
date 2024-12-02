@@ -7,7 +7,6 @@ import {
   Text,
   Switch,
   TouchableOpacity,
-  Animated,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -20,19 +19,6 @@ const AddTodos: React.FC<AddTodosProps> = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [completed, setCompleted] = useState(false);
   const dispatch = useDispatch();
-
-   // Animation values
-   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial opacity: 0
-   const scaleAnim = useRef(new Animated.Value(1)).current; // Initial scale: 1
- 
-   useEffect(() => {
-     // Fade-in animation for the input field
-     Animated.timing(fadeAnim, {
-       toValue: 1, // Final opacity: 1
-       duration: 800, // 800ms
-       useNativeDriver: true,
-     }).start();
-   }, [fadeAnim]);
 
   const addTodoHandler = () => {
     if (!title.trim()) {
